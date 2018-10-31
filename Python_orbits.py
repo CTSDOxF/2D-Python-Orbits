@@ -22,6 +22,8 @@ def new_object (x,y,radius,dx,dy,mass):
     rad.append(radius)
     mas.append(mass)
 
+#in order to create the objects, use the new_objects function above
+#and set objs to increase by the total number of objects to be made.
 
 new_object(0,0,5000,0,0,1000000000000000000)
 new_object(0,100000,1000,30,0,10000000000)
@@ -76,5 +78,5 @@ while go:
                         #print(pos[i])
     DISPLAYSURF.fill((255,255,255))
     for i in range(objs):
-        pygame.draw.circle(DISPLAYSURF,(0,0,0),(int(pos[i][0]/1000)+250,int(pos[i][1]/1000)+250),int(rad[i]/1000)+3,0)
+        pygame.draw.circle(DISPLAYSURF,(i*200,(i*200**2%256),((i*200**3)%256)),(int(pos[i][0]/1000)+250,int(pos[i][1]/1000)+250),int(rad[i]/1000)+3,0)
     pygame.display.update()
